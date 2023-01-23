@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>akshay</title>
+</head>
+<body  bgcolor="lightgrey">
+<h1><U> VALIDATION FORM </U></h1>
+<form> 
+<fieldset>
+<legend><b>Personal Information</b></legend>
+<form id="registration-form" method="post" onsubmit="return validateForm()">
+
+<label for="fname">First Name:</label><br>
+<input type="text" id="fname" name="fname">
+
+
+<label  style="margin-left:50px;"  for="lname">Last Name:</label>
+<input type="text" id="lname" name="lname"><br><br>
+
+
+<label for="pnum">Mobile Number:</label><br>
+<input type="text" id="pnum" name="pnum">
+ 
+
+<label style="margin-left:50px;"  for="lnum">Landline No:</label>
+<input type="text" id="lnum" name="lnum"><br><br>
+ 
+<label>Enter your Address:</label><br>
+<textarea></textarea>
+
+<label  style="margin-left:50px;" for="email">Email:</label>
+<input type="email" id="email" name="email"><br><br>
+
+<label for="password">Password:</label><br>
+<input type="password" id="password" name="password">    
+
+<label style="margin-left:50px;" for="confirm-password">Confirm Password:</label>
+<input type="password" id="confirm-password" name="confirm-password"><br><br><br>
+
+<label>Enter your Gender</label><br>
+<input type="radio" id="gender" name="gender"
+value="Male"/>Male<br>
+<input type="radio" id="gender" name="gender"
+value="female"/>Female<br>
+<input type="radio" id="gender" name="gender"
+value="others"/>Others<br><br>
+
+
+
+</fieldset>
+<form>
+<BR>
+<input type="reset" VALUE="RESET"></input>
+<input type="submit" VALUE="SUBMIT"></input>
+</form>
+
+    <script>
+      function validateForm() {
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+	var pnum=document.getElementById("pnum").value;
+	var lnum=document.getElementById("lnum").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirm-password = document.getElementById("confirm-password").value;
+        var errorMessage = "";
+ 
+        if (fname == "") {
+          errorMessage += "Name is required.\n";
+        }
+ 
+	if (lname == "") {
+          errorMessage += "Name is required.\n";
+        }
+	if (pnum=="") {
+		errorMessage += " plaese enter your phone number.\n";
+	}
+	if (lnum=="") {
+		errorMessage += " plaese enter your phone number.\n";
+	}
+
+        if (email == "") {
+          errorMessage += "Email is required.\n";
+        }
+ 
+        if (password == "") {
+          errorMessage += "Password is required.\n";
+        }
+ 
+        if (password != confirm-password) {
+          errorMessage += "Passwords do not match.\n";
+        }
+ 
+        if (errorMessage != "") {
+          alert(errorMessage);
+          return false;
+        }
+ 
+        return true;
+      }
+    </script>
+ </body>
+</html>
+
